@@ -1,0 +1,60 @@
+{% extends 'hotel/base.html' %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="inner-heading">
+          <h2>Logout</h2>
+        </div>
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li class="active">Logout</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>You have been logged out</h5>
+            <div class="border-top pt-3">
+              <div class="text-muted">
+                Don't want to leave us so soon? <a class="ml-2" href="{% url 'login' %}">Log in Again</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span4">
+        <aside class="right-sidebar">
+          <div class="widget">
+            <h5 class="widgetheading">Portfolio information</h5>
+            <ul class="folio-detail">
+              <li><label>Category :</label> Web design</li>
+              <li><label>Client :</label> Project Company</li>
+              <li><label>Project date :</label> 05 July, 2020</li>
+              <li><label>Project URL :</label> <a href="#">www.projectsiteurl.com</a></li>
+            </ul>
+          </div>
+          <div class="widget">
+            <h5 class="widgetheading">Text widget</h5>
+            <p>
+              Lorem ipsum dolor sit amet, unum suscipiantur te cum, vide magna ea eam. At eos wisi tractatos temporibus. Ne has omnis harum. Ei mea graece delenit nominati. Ut dolore albucius torquatos vel, choro gubergren no mel.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,245 @@
+{% extends 'hotel/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- section intro -->
+<section id="intro">
+  <div class="intro-content">
+    <h2>Welcome to Hotel Overlook!</h2>
+    <h3>You may enter if you dare</h3>
+    <div>
+      <a href="#content" class="btn-get-started scrollto">Please Enter</a>
+    </div>
+  </div>
+</section>
+<!-- /section intro -->
+
+<section id="content">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div class="row">
+            <div class="span3">
+              <div class="box aligncenter">
+                <div class="icon">
+                </div>
+                <div class="text">
+                  <h4><strong>Unforgettable Location</strong></h4>
+                  <a href="{% url 'hotel:unforgettable_location' %}">
+                    <img class="img_index" src="{% static 'hotel/img/01-index.jpg' %}" alt="">
+                  </a>
+                  <a href="{% url 'hotel:unforgettable_location' %}">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <div class="span3">
+              <div class="box aligncenter">
+                <div class="icon">
+                </div>
+                <div class="text">
+                  <h4><strong>Extraordinary Moments</strong></h4>
+                  <a href="{% url 'hotel:extraordinary_moments' %}">
+                    <img class="img_index" src="{% static 'hotel/img/02-index.jpg' %}" alt="">
+                  </a>
+                  <a href="{% url 'hotel:extraordinary_moments' %}">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <div class="span3">
+              <div class="box aligncenter">
+                <div class="icon">
+                </div>
+                <div class="text">
+                  <h4><strong>Exciting Attractions</strong></h4>
+                  <a href="{% url 'hotel:exciting_attractions' %}">
+                    <img class="img_index" src="{% static 'hotel/img/03-index.jpg' %}" alt="">
+                  </a>
+                  <a href="{% url 'hotel:exciting_attractions' %}">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <div class="span3">
+              <div class="box aligncenter">
+                <div class="icon">
+                </div>
+                <div class="text">
+                  <h4><strong>Unbelievable Offers&nbsp;</strong></h4>
+                  <a href="{% url 'hotel:unbelievable_offers' %}">
+                    <img class="img_index" src="{% static 'hotel/img/04-index.jpg' %}" alt="">
+                  </a>
+                  <a href="{% url 'hotel:unbelievable_offers' %}">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div class="cta-box">
+            <div class="row">
+              <div class="span8">
+                <div class="cta-text">
+                  <h2 style="color:#141414;">Special price for <span>those</span> who dare to enter</h2>
+                </div>
+              </div>
+              <div class="span4">
+                <div class="cta-btn">
+                  <a href="{% url 'hotel:unbelievable_offers' %}" class="btn btn-color">Try Your Luck </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="offer">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div class="row">
+            <div class="span12">
+              <div class="aligncenter">
+                <h4 style="color: #f7f9f9;">Spacious Rooms & Suites</h4>
+                <blockquote>
+                  When you arrive at Overlook Hotel, you’ll find more than just a place to stay – it’s a place to come alive. With 350 recently renovated rooms and suites to choose from, discover a vacation that is as comfortable as it is memorable.
+                </blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="span3">
+              <h4 style="color: #f7f9f9;">Choose your suite and start your adventure.</h4>
+            </div>
+            <div class="span3">
+              <div class="pricing-box-plain">
+                <div class="heading">
+                  <h4 style="color: #141414;">Garden Standard</h4>
+                  <img src="{% static 'hotel/img/2-room.jpg' %}" alt="">
+                  <span>$140 / Night</span>
+                </div>
+                <div class="desc">
+                  <ul>
+                    <li>King-sized bed or wall bed</li>
+                    <li>Smooth carpet floor</li>
+                    <li>Garden View</li>
+                  </ul>
+                </div>
+                <div class="action">
+                  <a href="#" class="btn btn-color">Book Now</a>
+                </div>
+              </div> 
+            </div>
+            <div class="span3">
+              <div class="pricing-box-plain">
+                <div class="heading">
+                  <h4 style="color: #141414;">Balcony Standard</h4>
+                  <img src="{% static 'hotel/img/7-room.jpg' %}" alt="">
+                  <span>$190 / Night</span>
+                </div>
+                <div class="desc">
+                  <ul>
+                    <li>King-sized bed or wall bed</li>
+                    <li>Smooth carpet floor</li>
+                    <li>Private balcony</li>
+                  </ul>
+                </div>
+                <div class="action">
+                  <a href="#" class="btn btn-color">Book Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="span3">
+              <div class="pricing-box-plain">
+                <div class="heading">
+                  <h4 style="color: #141414;">Deluxe Standard</h4>
+                  <img src="{% static 'hotel/img/3-room.jpg' %}" alt="">
+                  <span>$240 / Night</span>
+                </div>
+                <div class="desc">
+                  <ul>
+                    <li>King-sized bed or wall bed</li>
+                    <li>Some with Kitchenette</li>
+                    <li>Private balcony</li>
+                  </ul>
+                </div>
+                <div class="action">
+                  <a href="#" class="btn btn-color">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="works">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <h3>Experiences</h3>
+          <div class="row">
+            <div class="grid cs-style-3">
+              <div class="span3">
+                <div class="item">
+                  <figure>
+                    <div><img src="{% static 'hotel/img/dummies/works/1.jpg' %}" alt=""></div>
+                    <figcaption>
+                      <h3>Art & Architecture</h3>
+                      <div class="exp">
+                        <a href="#" class="btn btn-color">Learn More</a>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="span3">
+                <div class="item">
+                  <figure>
+                    <div><img src="{% static 'hotel/img/dummies/works/2.jpg' %}" alt=""></div>
+                    <figcaption>
+                      <h3>Art of Cooking</h3>
+                      <div class="exp">
+                        <a href="#" class="btn btn-color">Learn More</a>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="span3">
+                <div class="item">
+                  <figure>
+                    <div><img src="{% static 'hotel/img/dummies/works/3.jpg' %}" alt=""></div>
+                    <figcaption>
+                      <h3>Dining Experience</h3>
+                      <div class="exp">
+                        <a href="#" class="btn btn-color">Learn More</a>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div class="span3">
+                <div class="item">
+                  <figure>
+                    <div><img src="{% static 'hotel/img/dummies/works/4.jpg' %}" alt=""></div>
+                    <figcaption>
+                      <h3>Bourbon Experience</h3>
+                      <div class="exp">
+                        <a href="#" class="btn btn-color">Learn More</a>
+                      </div>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "hotel/base.html" %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="inner-heading">
+          <h2>Delete Post</h2>
+        </div>
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li class="active">Delete Post</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    <div class="row marginbot100">
+      <div class="span3 marginbot20">
+        <form method="POST">
+          {% csrf_token %}
+          <fieldset class="form-group">
+            <p class="marginbot20 white">Are you sure you want to delete the post "{{ object.title }}"?</p>
+          </fieldset>
+          <div class="form-group">
+            <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+            <a class="btn btn-outline-secondary" href="{% url 'hotel:post-detail' object.id %}">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

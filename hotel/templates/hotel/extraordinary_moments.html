@@ -1,0 +1,81 @@
+{% extends 'hotel/base.html' %}
+{% load static %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row nomargin">
+      <div class="span7">
+        <div class="inner-heading">
+          <h2>Extraordinary Moments</h2>
+        </div>
+      </div>
+      <div class="span5">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li><a href="#">Uncover The Wonders</a> <i class="icon-angle-right"></i></li>
+          <li class="active">Extraordinary Moments</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    <div style="margin-bottom:0;" class="row">
+      <div class="left"><img src="{% static 'hotel/img/02-index.jpg' %}">
+      </div>
+      <div class="right">
+        <div class="art">
+          <h4 style="color:#20c0df;">Quality room service for everyone</h4>
+          <p class="room-intro">Lorem ipsum dolor sit amet, ei quod constituto qui. Summo labores expetendis ad quo, lorem luptatum et vis. No qui vidisse signiferumque. Fierent adipisci iracundia est ei, usu timeam persius ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed. Dicam appetere ne qui, no has scripta appellantur.</p>
+        </div>
+        <div class="wonders-button">
+          <a href="#content" class="btn-wonders scrollto">Discover more</a>
+        </div> 
+      </div>
+    </div>
+    <div style="margin-bottom:0;" class="row">
+      <div class="right">
+        <div class="art">
+          <h4 style="color:#20c0df;">Unexpected guests</h4>
+          <p class="room-intro">Lorem ipsum dolor sit amet, ei quod constituto qui. Summo labores expetendis ad quo, lorem luptatum et vis. No qui vidisse signiferumque. Fierent adipisci iracundia est ei, usu timeam persius ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed. Dicam appetere ne qui, no has scripta appellantur.</p>
+        </div>
+        <div class="wonders-button">
+          <a href="#content" class="btn-wonders scrollto">Discover more</a>
+        </div>
+      </div> 
+      <div class="left"><img src="{% static 'hotel/img/bloodhead.jpg' %}">
+      </div>   
+    </div>
+    <div style="margin-bottom:0;" class="row">
+      <div class="left"><img src="{% static 'hotel/img/tricycle.jpg' %}">
+      </div>
+      <div class="right">
+        <div class="art">
+          <h4 style="color:#20c0df;">Activities for children</h4>
+          <p class="room-intro">Lorem ipsum dolor sit amet, ei quod constituto qui. Summo labores expetendis ad quo, lorem luptatum et vis. No qui vidisse signiferumque. Fierent adipisci iracundia est ei, usu timeam persius ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed. Dicam appetere ne qui, no has scripta appellantur.</p>
+        </div>
+        <div class="wonders-button">
+          <a href="#content" class="btn-wonders scrollto">Discover more</a>
+        </div> 
+      </div>
+    </div>
+    <div class="row marginbot30">
+      <div class="right">
+        <div class="art">
+          <h4 style="color:#20c0df;">Lovely trip to countryside</h4>
+          <p class="room-intro">Lorem ipsum dolor sit amet, ei quod constituto qui. Summo labores expetendis ad quo, lorem luptatum et vis. No qui vidisse signiferumque. Fierent adipisci iracundia est ei, usu timeam persius ea. Usu ea justo malis, pri quando everti electram ei, ex homero omittam salutatus sed. Dicam appetere ne qui, no has scripta appellantur.</p>
+        </div> 
+        <div class="wonders-button">
+          <a href="#content" class="btn-wonders scrollto">Book now</a>
+        </div>
+      </div>
+      <div class="left"><img src="{% static 'hotel/img/trip.jpg' %}">
+      </div>   
+    </div>
+  </div>
+</section>
+
+{% endblock %}

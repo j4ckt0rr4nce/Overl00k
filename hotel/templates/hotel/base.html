@@ -1,0 +1,195 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Overlook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="My Blog" />
+  <meta name="author" content="Ivan Ciap" />
+
+  {% block css %}
+  <!-- css -->
+  <link href="{% static 'hotel/css/bootstrap.css' %}" rel="stylesheet">
+  <link href="{% static 'hotel/css/bootstrap-responsive.css' %}" rel="stylesheet">
+  <link href="{% static 'hotel/css/prettyPhoto.css' %}" rel="stylesheet">
+  <link href="{% static 'hotel/css/style.css' %}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  
+  <!-- Theme skin -->
+  <link id="t-colors" href="{% static 'hotel/color/default.css' %}" rel="stylesheet" />
+  {% endblock css %}
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'hotel/ico/apple-touch-icon-144-precomposed.png' %}" />
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'hotel/ico/apple-touch-icon-114-precomposed.png' %}" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'hotel/ico/apple-touch-icon-72-precomposed.png' %}" />
+  <link rel="apple-touch-icon-precomposed" href="{% static 'hotel/ico/apple-touch-icon-57-precomposed.png' %}" />
+  <link rel="shortcut icon" href="{% static 'hotel/ico/favicon.png' %}" />
+</head>
+
+<body>
+  <div id="wrapper">
+    <!-- start header -->
+    <header>
+      <div class="top">
+        <div class="container">
+          <div class="row">
+            <div class="span6">
+              <ul class="topmenu">
+                <li><a href="{% url 'hotel:gallery' %}">Gallery</a> &#47;</li>
+                <li><a href="{% url 'hotel:about_us' %}">About Us</a>&#47;</li>
+                <li><a href="{% url 'hotel:stay' %}">Stay</a>&#47;</li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' username=request.user %}">{{ request.user }}</a>&#47;</li>
+                <li><a class="log" href="{% url 'logout' %}">Logout</a>&#47;</li>
+                {% else %}
+                <li><a class="log" href="{% url 'login' %}">Login</a> &#47;</li>
+                <li><a href="{% url 'register' %}">Sign Up</a> &#47;</li>
+                {% endif %}
+              </ul>
+            </div>
+            <div class="span6">
+              <ul class="social-network">
+                <li><a href="#" data-placement="bottom" title="Facebook"><i class="icon-circled icon-bglight icon-facebook"></i></a></li>
+                <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-circled icon-bglight icon-twitter"></i></a></li>
+                <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-circled icon-linkedin icon-bglight"></i></a></li>
+                <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-circled icon-pinterest  icon-bglight"></i></a></li>
+                <li><a href="#" data-placement="bottom" title="Google +"><i class="icon-circled icon-google-plus icon-bglight"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row nomargin">
+          <div class="span4">
+            <div class="logo">
+              <h1><a href="{% url 'hotel:index' %}"><i class="icon-key"></i> Hotel Overlook</a></h1>
+            </div>
+          </div>
+          <div class="span8">
+            <div class="navbar navbar-static-top">
+              <div class="navigation">
+                <nav>
+                  <ul class="nav topnav">
+                    <li class="active">
+                      <a href="{% url 'hotel:index' %}">Home</a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#">Uncover The Wonders <i class="icon-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{% url 'hotel:unforgettable_location' %}">Unforgettable Location</a></li>
+                        <li><a href="{% url 'hotel:extraordinary_moments' %}">Extraordinary Moments</a></li>
+                        <li><a href="{% url 'hotel:exciting_attractions' %}">Exciting Attractions</a></li>
+                        <li><a href="{% url 'hotel:unbelievable_offers' %}">Unbelievable Offers</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="{% url 'hotel:blog' %}">Blog</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'hotel:contact' %}">Contact </a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#">Messages <i class="icon-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{% url 'hotel:messages_inbox' %}">Inbox</a></li>
+                        <li><a href="{% url 'hotel:messages_outbox' %}">Outbox</a></li>
+                        <li><a href="{% url 'hotel:messages_compose' %}">New Message</a></li>
+                        <li><a href="{% url 'hotel:messages_trash' %}">Trash</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- end navigation -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header -->
+
+    <!-- section intro -->
+
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="widget">
+              <div class="footer_logo">
+                <h3><a href="{% url 'hotel:index' %}"><i class="icon-key"></i> Hotel Overlook</a></h3>
+              </div>
+              <address>
+                <strong>Ivan Ciap</strong><br>
+                Internatna 39<br>
+                Banska Bystrica 97404 Slovakia
+              </address>
+              <p>
+                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
+                <i class="icon-envelope-alt"></i> ciapivan@gmail.com
+              </p>
+            </div>
+          </div>
+          <div class="span4">
+            <div class="widget">
+              <h5 class="widgetheading">Browse pages</h5>
+              <ul class="link-list">
+                <li><a href="#">Our company</a></li>
+                <li><a href="#">Terms and conditions</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Press release</a></li>
+                <li><a href="#">What we have done</a></li>
+                <li><a href="#">Our support forum</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sub-footer">
+        <div class="container">
+          <div class="row">
+            <div class="span6">
+              <div class="copyright">
+                <p><span>&copy; Ivan Ciap All right reserved</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <a href="#" class="scrollup"><i class="icon-angle-up icon-rounded icon-bglight icon-2x"></i></a>
+
+  {% block javascript %}
+<!-- javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="{% static 'hotel/js/jquery.js' %}"></script>
+  <script src="{% static 'hotel/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'hotel/js/bootstrap.js' %}"></script>
+  <script src="{% static 'hotel/js/modernizr.custom.js' %}"></script>
+  <script src="{% static 'hotel/js/toucheffects.js' %}"></script>
+  <script src="{% static 'hotel/js/google-code-prettify/prettify.js' %}"></script>
+  <script src="{% static 'hotel/js/jquery.prettyPhoto.js' %}"></script>
+  <script src="{% static 'hotel/js/portfolio/jquery.quicksand.js' %}"></script>
+  <script src="{% static 'hotel/js/portfolio/setting.js' %}"></script>
+  <script src="{% static 'hotel/js/animate.js' %}"></script>
+  <script src="http://malsup.github.io/jquery.cycle2.js"></script>
+  <script src="http://malsup.github.io/jquery.cycle2.shuffle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+  <!-- Template Custom JavaScript File -->
+  <script src="{% static 'hotel/js/custom.js' %}"></script>
+
+
+{% endblock javascript %}
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% blocktrans with recipient=message.recipient sender=message.sender %}Hello {{ recipient }},
+
+you received a private message from {{ sender }} with
+the following contents:{% endblocktrans %}
+
+{{ message.body|safe }}
+
+--
+{% blocktrans %}Sent from {{ site_url }}{% endblocktrans %}
+Inbox: {{ site_url }}{% url 'hotel:messages_inbox' %}
+Reply: {{ site_url }}{% url 'hotel:messages_reply' message.pk %}

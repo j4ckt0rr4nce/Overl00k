@@ -1,0 +1,59 @@
+{% extends "hotel/base.html" %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="inner-heading">
+          <h2>Post View</h2>
+        </div>
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li class="active">Post View</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    <div class="row marginbot40">
+      <div class="span3">
+        <div class="marginbot20 marginleft20">
+          <a class="" href="{% url 'hotel:user-posts' object.author.username %}">{{ object.author }}</a>
+          <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+        </div>
+        <img class="img-profile" src="{{ object.author.profile.image.url }}">
+      </div>
+      <div class="span6 filter-list">
+        <h5 class="">{{ object.title }}</h5>
+        <p class="marginbot20 white wrap-text">{{ object.content }}</p>
+        {% if request.user.is_authenticated %}
+        <strong class="white">{{ object.liked.all.count }} Like {{ object.liked.all.count|pluralize }}</strong>
+        <form class="" action="{% url 'hotel:like-post' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="post_id" value="{{ post.id }}">
+          {% if user not in object.liked.all %}
+          <button type="submit" class="btn btn-primary">Like</button>
+          {% else %}
+          <button type="submit" class="btn btn-danger">Dislike</button>
+          {% endif %}
+        </form>   
+        {% if object.author == user %}
+        <div>
+          <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'hotel:post-update' object.id %}">Update</a>
+          <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'hotel:post-delete' object.id %}">Delete</a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+{% endblock %}

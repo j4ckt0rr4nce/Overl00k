@@ -1,0 +1,81 @@
+{% extends 'hotel/base.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="inner-heading">
+          <h2>Get in touch</h2>
+        </div>
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li class="active">Contact</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">  
+  <div class="container">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d84199.38373451827!2d19.06093140716591!3d48.73928892762516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47153de36e8ad42f%3A0xf8223f8a0b8b9032!2sBansk%C3%A1%20Bystrica%2C%20Slovakia!5e0!3m2!1sen!2sbg!4v1584382446688!5m2!1sen!2sbg" width="100%" height="380" frameborder="0" style="border:0; margin-bottom:50px;" allowfullscreen></iframe>
+    <div class="row margintop40">
+      <div class="span8">
+        <h4>Get in touch with us by filling contact form below</h4>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <form id="contactform" action="" method="POST" role="form" class="contactForm">
+          {% csrf_token %}
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <div class="row">
+            <div class="span4 field form-group">
+              {{ form.name|as_crispy_field }}
+              <div class="validation"></div>
+            </div>
+            <div class="span4 field form-group">
+              {{ form.email|as_crispy_field }}
+              <div class="validation"></div>
+            </div>
+            <div class="span8 margintop10 field form-group">
+              {{ form.subject|as_crispy_field }}
+              <div class="validation"></div>
+            </div>
+            <div class="span8 margintop10 field form-group">
+              {{ form.message|as_crispy_field }}
+              <p>
+                <button class="btn btn-color margintop20 pull-left" type="submit">Send message</button>
+                <span class="pull-right margintop20 white">* Please fill all required form field, thanks!</span>
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="span4">
+        <div class="clearfix"></div>
+        <aside class="right-sidebar">
+          <div class="widget">
+            <h5 class="widgetheading">Contact information<span></span></h5>
+            <ul class="white">
+              <li><label>Address :</label> Internatna 39<br /> Banska Bystrica - Slovakia</li>
+              <li><label>Phone :</label>+62 123 456 78 / +62 123 456 79</li>
+              <li><label>Email : </label> ciapivan@gmail.com</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,200 @@
+{% extends 'hotel/base.html' %}
+{% load static %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row nomargin">
+      <div class="span7">
+        <div class="inner-heading">
+          <h2>Overlook Rooms & Suites</h2>
+        </div>
+      </div>
+      <div class="span5">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li><a href="#">Uncover The Wonders</a> <i class="icon-angle-right"></i></li>
+          <li class="active">Overlook Rooms & Suites</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stay">
+  <div class="intro-content">
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h4>Room offers</h4>
+      </div>
+      <div class="span4">
+        <div class="pricing-box-wrap special">
+          <div class="pricing-heading">
+            <h3>Garden <strong>Standard</strong></h3>
+            <img src="{% static 'hotel/img/2-room.jpg' %}" alt="">
+          </div>
+          <div class="pricing-terms">
+            <h6>&#36;140.00 / Night</h6>
+          </div>
+          <div class="pricing-content">
+            <ul>
+              <li><i class="icon-ok"></i> King-sized bed or wall bed</li>
+              <li><i class="icon-ok"></i> Some with Kitchenette</li>
+              <li><i class="icon-ok"></i> Smooth carpet floor</li>
+              <li><i class="icon-ok"></i> Private balcony</li>
+              <li><i class="icon-ok"></i> Secluded, lower-floor location</li>
+            </ul>
+          </div>
+          <div class="pricing-action">
+            <a href="#" class="btn btn-medium btn-color"><i class="icon-bolt"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="pricing-box-wrap special">
+          <div class="pricing-heading">
+            <h3>Balcony <strong>Standard</strong></h3>
+            <img src="{% static 'hotel/img/7-room.jpg' %}" alt="">
+          </div>
+          <div class="pricing-terms">
+            <h6>&#36;190.00 / Night</h6>
+          </div>
+          <div class="pricing-content">
+            <ul>
+              <li><i class="icon-ok"></i> King-sized bed or wall bed</li>
+              <li><i class="icon-ok"></i> Some with Kitchenette</li>
+              <li><i class="icon-ok"></i> Smooth carpet floor</li>
+              <li><i class="icon-ok"></i> Private balcony</li>
+              <li><i class="icon-ok"></i> Secluded, lower-floor location</li>
+            </ul>
+          </div>
+          <div class="pricing-action">
+            <a href="#" class="btn btn-medium btn-color"><i class="icon-bolt"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="pricing-box-wrap special">
+          <div class="pricing-heading">
+            <h3>Deluxe <strong>Standard</strong></h3>
+            <img src="{% static 'hotel/img/3-room.jpg' %}" alt="">
+          </div>
+          <div class="pricing-terms">
+            <h6>&#36;240.00 / Night</h6>
+          </div>
+          <div class="pricing-content">
+            <ul>
+              <li><i class="icon-ok"></i> King-sized bed or wall bed</li>
+              <li><i class="icon-ok"></i> Some with Kitchenette</li>
+              <li><i class="icon-ok"></i> Smooth carpet floor</li>
+              <li><i class="icon-ok"></i> Private balcony</li>
+              <li><i class="icon-ok"></i> Secluded, lower-floor location</li>
+            </ul>
+          </div>
+          <div class="pricing-action">
+            <a href="#" class="btn btn-medium btn-color"><i class="icon-bolt"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- divider -->
+    <div class="row">
+      <div class="span12">
+        <div class="marginbot30"></div>
+      </div>
+    </div>
+    <!-- end divider -->
+
+
+    <div class="row">
+      <div class="span12">
+        <h4>Suite offers</h4>
+      </div>
+      <div class="span4">
+        <div class="pricing-box-wrap special">
+          <div class="pricing-heading">
+            <h3>Junior <strong>Suite</strong></h3>
+            <img src="{% static 'hotel/img/5-room.jpg' %}" alt="">
+          </div>
+          <div class="pricing-terms">
+            <h6>&#36;340.00 / Night</h6>
+          </div>
+          <div class="pricing-content">
+            <ul>
+              <li><i class="icon-ok"></i> 750 sq. ft.</li>
+              <li><i class="icon-ok"></i> Smooth carpet floors</li>
+              <li><i class="icon-ok"></i> One king-sized bed</li>
+              <li><i class="icon-ok"></i> Seating area with sofa bed</li>
+              <li><i class="icon-ok"></i> Kitchenette with refrigerator </li>
+            </ul>
+          </div>
+          <div class="pricing-action">
+            <a href="#" class="btn btn-medium btn-color"><i class="icon-bolt"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="pricing-box-wrap special">
+          <div class="pricing-heading">
+            <h3>Garden <strong>Suite</strong></h3>
+            <img src="{% static 'hotel/img/6-room.jpg' %}" alt="">
+          </div>
+          <div class="pricing-terms">
+            <h6>&#36;390.00 / Night</h6>
+          </div>
+
+          <div class="pricing-content">
+            <ul>
+              <li><i class="icon-ok"></i> 850 sq. ft.</li>
+              <li><i class="icon-ok"></i> Smooth carpet floors</li>
+              <li><i class="icon-ok"></i> One king-sized bed</li>
+              <li><i class="icon-ok"></i> Sofa bed</li>
+              <li><i class="icon-ok"></i> One full and one half bath</li>
+            </ul>
+          </div>
+          <div class="pricing-action">
+            <a href="#" class="btn btn-medium btn-color"><i class="icon-bolt"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="pricing-box-wrap special">
+          <div class="pricing-heading">
+            <h3>Royal <strong>Suite</strong></h3>
+            <img src="{% static 'hotel/img/4-room.jpg' %}" alt="">
+          </div>
+          <div class="pricing-terms">
+            <h6>&#36;640.00 / Night</h6>
+          </div>
+          <div class="pricing-content">
+            <ul>
+              <li><i class="icon-ok"></i> Expansive guest room</li>
+              <li><i class="icon-ok"></i> 24x7 support available</li>
+              <li><i class="icon-ok"></i> Two king-sized beds</li>
+              <li><i class="icon-ok"></i> Seating area with sofa bed</li>
+              <li><i class="icon-ok"></i> Private balcony with garden</li>
+            </ul>
+          </div>
+          <div class="pricing-action">
+            <a href="#" class="btn btn-medium btn-color"><i class="icon-bolt"></i> Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- divider -->
+    <div class="row">
+      <div class="span12">
+        <div class="marginbot30"></div>
+      </div>
+    </div>
+    <!-- end divider -->
+  </section>
+
+  {% endblock %}

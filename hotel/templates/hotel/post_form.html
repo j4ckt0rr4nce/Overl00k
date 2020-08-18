@@ -1,0 +1,67 @@
+{% extends 'hotel/base.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="inner-heading">
+          <h2>Blog Post</h2>
+        </div>
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li class="active">Blog Post</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+          {% if messages %}
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+          {% endfor %}
+          {% endif %}
+          <h3>Blog Post</h3>
+          <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+              {{ form|crispy }}
+            </table>
+            <input class="btn btn-color margintop10" type="submit" value="Post &raquo;"/>
+          </form>
+        </div>
+      <div class="span4 margintop40">
+        <aside class="right-sidebar">
+          <div class="widget">
+            <h5 class="widgetheading">Portfolio information</h5>
+            <ul class="folio-detail">
+              <li><label>Category :</label> Web design</li>
+              <li><label>Client :</label> Project Company</li>
+              <li><label>Project date :</label> 05 July, 2020</li>
+              <li><label>Project URL :</label> <a href="#">www.projectsiteurl.com</a></li>
+            </ul>
+          </div>
+          <div class="widget">
+            <h5 class="widgetheading">Text widget</h5>
+            <p>
+              Lorem ipsum dolor sit amet, unum suscipiantur te cum, vide magna ea eam. At eos wisi tractatos temporibus. Ne has omnis harum. Ei mea graece delenit nominati. Ut dolore albucius torquatos vel, choro gubergren no mel.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

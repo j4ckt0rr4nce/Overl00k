@@ -1,0 +1,74 @@
+{% extends "hotel/base.html" %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="inner-heading">
+          <h2>Trash</h2>
+        </div>
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li class="active">Trash</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+        <h3>Deleted Messages</h3>
+        {% if message_list %}
+        <table class="messages">
+          <thead class="table-head">
+            <tr><th>Sender</th><th>Subject</th><th>Date</th><th>Action</th></tr>
+          </thead>
+          <tbody class="white">
+            {% for message in message_list %}
+            <tr>
+              <td>{{ message.sender }}</td>
+              <td>
+                {{ message.subject }}
+              </td>
+              <td>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
+              <td><a href="{% url 'hotel:messages_undelete' message.id %}">undelete</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p>No messages.</p>
+        {% endif %}
+        <br />
+        <p>Deleted Messages are removed from the trash at unregular intervals, don't rely on this feature for long-time storage.</p>
+      </div>
+      <div class="span4">
+        <aside class="right-sidebar">
+          <div class="widget">
+            <h5 class="widgetheading">Portfolio information</h5>
+            <ul class="folio-detail">
+              <li><label>Category :</label> Web design</li>
+              <li><label>Client :</label> Project Company</li>
+              <li><label>Project date :</label> 05 July, 2020</li>
+              <li><label>Project URL :</label> <a href="#">www.projectsiteurl.com</a></li>
+            </ul>
+          </div>
+          <div class="widget">
+            <h5 class="widgetheading">Text widget</h5>
+            <p>
+              Lorem ipsum dolor sit amet, unum suscipiantur te cum, vide magna ea eam. At eos wisi tractatos temporibus. Ne has omnis harum. Ei mea graece delenit nominati. Ut dolore albucius torquatos vel, choro gubergren no mel.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

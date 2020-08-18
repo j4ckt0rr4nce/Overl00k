@@ -1,0 +1,90 @@
+{% extends 'hotel/base.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="inner-heading">
+          <h2>{{ user.username }}'s Profile</h2>
+        </div>
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li class="active">{{ user.username }}'s Profile</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="message-width alert alert-{{ message.tags }}">
+      {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="row">
+      <div class="span2">
+        <img class="img-profile" src="{{ user.profile.image.url }}">
+        {% if user == request.user %}
+        {% render_field p_form.image %}
+        {% endif %}
+      </div>
+      <div class="span2 filter-list white">
+        <h3>{{ user.username }}</h3>
+        <p>{{ user.email }}</p>
+        <strong>{{ qs.followed.all.count }} Follower {{ qs.followed.all.count|pluralize }}</strong>
+        <div class="margintop10">
+          {% if user != request.user %}
+          {% if request.user in qs.followed.all %}
+          <a type="button" class="btn btn-outline-primary margin-button" role="button" href="{% url 'hotel:unfollow' username=user.username %}">Unfollow</a>
+          {% else %}
+          <a type="button" class="btn btn-outline-primary margin-button" role="button" href="{% url 'hotel:follow' username=user.username %}">Follow</a>
+          {% endif %}
+          {% endif %}
+        </div>
+      </div>   
+    </div>
+    <div class="row">
+      <div id="trololo" class="span4 marginbot30">
+        {% if user == request.user %}
+        <div class="register-radius register">
+          <form action="" method="POST" class="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form__field">
+              {% render_field u_form.username type="text" placeholder="Enter your Full Name" %}
+            </div>
+            <div class="form__field">
+              {% render_field u_form.email type="email" placeholder="info@mailaddress.com" %}
+            </div>
+            <div class="form__field">
+              {% render_field p_form.phone type="text" placeholder="Enter your Phone" %}
+            </div>
+            <div class="form__field">
+              {% render_field p_form.address type="text" placeholder="Enter your Address" %} 
+            </div>
+            <div class="form__field">
+              {% render_field p_form.city type="text" placeholder="Enter your City" %}
+            </div>
+            <div class="form__field">
+              {% render_field p_form.country type="text" placeholder="Enter your Country" %} 
+            </div>
+            <div class="form__field filter-list">
+              <input type="submit" value="Update">
+            </div>
+          </form>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

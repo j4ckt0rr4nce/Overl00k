@@ -1,0 +1,36 @@
+{% extends 'hotel/base.html' %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="inner-heading">
+          <h2>500</h2>
+        </div>
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li><a href="#">Pages</a> <i class="icon-angle-right"></i></li>
+          <li class="active">500 Error page</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h2 class="errortitle aligncenter">500</h2>
+        <h3 class="aligncenter"><i class="icon-remove"></i> An unexpected error has occurred</h3>
+        <p class="aligncenter">The administrator has been notified. Sorry for the inconvenience!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

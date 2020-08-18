@@ -1,0 +1,36 @@
+{% extends 'hotel/base.html' %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="inner-heading">
+          <h2>404</h2>
+        </div>
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li><a href="#">Pages</a> <i class="icon-angle-right"></i></li>
+          <li class="active">404 Error page</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h2 class="errortitle aligncenter">404</h2>
+        <h3 class="aligncenter"><i class="icon-remove"></i> Sorry requested page not found</h3>
+        <p class="aligncenter">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam non mod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

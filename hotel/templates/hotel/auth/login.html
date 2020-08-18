@@ -1,0 +1,89 @@
+{% extends 'hotel/base.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="inner-heading">
+          <h2>Sign In</h2>
+        </div>
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li class="active">Sign In</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="marginright alert alert-{{ message.tags }}">
+      {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="row team">
+      <div class="span4 auth-line-right" style="margin:0">
+        <div class="login-box-wrap special">
+          <div class="pricing-heading">
+            <img class="" src="{% static 'hotel/img/login1.jpg'  %}" height="580">
+          </div>
+          <div class="pricing-terms">
+            <h3 style="color:#b2230d;">Here 's Johnny !</h3>
+          </div>
+        </div>
+      </div>
+      <div class="span4 auth-line" style="margin:0 0 20px 0;">
+        <div class="grid align__item">
+          <div class="register register-color">
+            <img class="marginbot20" src="{% static 'hotel/img/logo-key.png' %}" width="70" height="90">
+            <h2 class="log-color">Sign In</h2>
+            <form action="" method="POST" class="form">
+              {% csrf_token %}
+              <div class="form__field">
+                {% render_field form.username type="text" placeholder="Enter your Full Name" %}
+              </div>
+              <div class="form__field">
+                {% render_field form.password type="password" placeholder="••••••••••••" %}
+              </div>
+              <div class="form__field">
+                <input type="submit" value="Sign In">
+              </div>
+            </form>
+            <p>Need An Account? <a href="{% url 'register' %}">Sign Up Now</a></p>
+            <p>Forgot Your Password? <a href="{% url 'password_reset' %}">Click to Reset It</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="span3">
+        <aside>
+          <div class="widget filter-list">
+            <h5 class="widgetheading">Portfolio information</h5>
+            <ul class="folio-detail">
+              <li><label>Category :</label> Web design</li>
+              <li><label>Client :</label> Project Company</li>
+              <li><label>Project date :</label> 05 July, 2020</li>
+              <li><label>Project URL :</label> <a href="#">www.projectsiteurl.com</a></li>
+            </ul>
+          </div>
+          <div class="widget">
+            <h5 class="widgetheading">Text widget</h5>
+            <p>
+              Lorem ipsum dolor sit amet, unum suscipiantur te cum, vide magna ea eam. At eos wisi tractatos temporibus. Ne has omnis harum. Ei mea graece delenit nominati. Ut dolore albucius torquatos vel, choro gubergren no mel.
+            </p>
+          </div>
+        </aside>      
+      </div>  
+    </div>
+  </section>
+
+  {% endblock %}

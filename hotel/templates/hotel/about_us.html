@@ -1,0 +1,123 @@
+{% extends 'hotel/base.html' %}
+{% load static %}
+{% block content %}
+
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="span4">
+        <div class="inner-heading">
+          <h2>About us</h2>
+        </div>
+      </div>
+      <div class="span8">
+        <ul class="breadcrumb">
+          <li><a href="{% url 'hotel:index' %}">Home</a> <i class="icon-angle-right"></i></li>
+          <li class="active">About us</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span6">
+        <h4>About Hotel Overlook</h4>
+        <p class="room-intro">
+          A unique history. An expansive resort. 17 beautifull acres filled with exhilarating activities and convenient amenities. Hotel Overlook is where comfort and beauty combine. Come join us.
+        </p>
+        <p class="room-intro">
+          Hotel Overlook is a full-service resort offering a range of services and amenities to make your stay complete. Whether it’s local sightseeing tours, car rental, or printing services you need, you’ll find it all here.
+        </p>
+      </div>
+
+      <div class="span6">
+        <aside class="right-sidebar">
+          <iframe class="video-res" src="https://www.youtube.com/embed/RigIpVXm2xA" width="500" height="281" seamless></iframe>
+        </aside>
+      </div>
+    </div>
+
+    <!-- divider -->
+    <div class="row">
+      <div class="span12">
+        <div class="solidline"></div>
+      </div>
+    </div>
+    <!-- end divider -->
+
+    <div class="row team">
+      <div class="span12">
+        <h4>Nice persons behind Hotel Overlook</h4>
+      </div>
+      <div class="span3">
+        <div class="team-box">
+          <a href="#" class="thumbnail"><img src="{% static 'hotel/img/dummies/team1.jpg' %}" alt="" /></a>
+          <div class="roles aligncenter">
+            <p class="lead"><strong>Mr. Jack Torrance</strong></p>
+            <p>
+              Heart of the hotel
+            </p>
+            <p>
+              <a href="#"><i class="icon-facebook icon-circled icon-bglight active"></i></a>
+              <a href="#"><i class="icon-twitter icon-circled icon-bglight active"></i></a>
+              <a href="#"><i class="icon-linkedin icon-circled icon-bglight active"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="span3">
+        <div class="team-box">
+          <a href="#" class="thumbnail"><img src="{% static 'hotel/img/dummies/team2.jpg' %}" alt="" /></a>
+          <div class="roles aligncenter">
+            <p class="lead"><strong>Mr. Delbert Grady</strong></p>
+            <p>
+              Caretaker
+            </p>
+            <p>
+              <a href="#"><i class="icon-facebook icon-circled icon-bglight active"></i></a>
+              <a href="#"><i class="icon-twitter icon-circled icon-bglight active"></i></a>
+              <a href="#"><i class="icon-linkedin icon-circled icon-bglight active"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="span3">
+        <div class="team-box">
+          <a href="#" class="thumbnail"><img src="{% static 'hotel/img/dummies/team3.jpg' %}" alt="" /></a>
+          <div class="roles aligncenter">
+            <p class="lead"><strong>Mr. Lloyd unknown</strong></p>
+            <p>
+              Bartender
+            </p>
+            <p>
+              <a href="#"><i class="icon-facebook icon-circled icon-bglight active"></i></a>
+              <a href="#"><i class="icon-twitter icon-circled icon-bglight active"></i></a>
+              <a href="#"><i class="icon-linkedin icon-circled icon-bglight active"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="span3">
+        <div class="team-box">
+          <a href="#" class="thumbnail"><img src="{% static 'hotel/img/dummies/team4.jpg' %}" alt="" /></a>
+          <div class="roles aligncenter">
+            <p class="lead"><strong>Mr. Dick Hallorann</strong></p>
+            <p>
+              Chef and Cook
+            </p>
+            <p>
+              <a href="#"><i class="icon-facebook icon-circled icon-bglight active"></i></a>
+              <a href="#"><i class="icon-twitter icon-circled icon-bglight active"></i></a>
+              <a href="#"><i class="icon-linkedin icon-circled icon-bglight active"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

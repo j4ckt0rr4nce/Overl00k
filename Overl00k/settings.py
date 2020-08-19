@@ -19,8 +19,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'r4ep(3m*fl4s4!z*0psxy%+=^3q76&*6)n)!mctwb4o-4$0@(z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -131,10 +129,3 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = '/hotel/index'
 LOGIN_URL = 'login'
-
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'ciapivan@gmail.com'
-EMAIL_HOST_PASSWORD = 'ufou ymxx qfgh riew'
